@@ -1,0 +1,18 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  //this defines what 1rem is
+  font-size: 62.5%;
+  /*    100 % == 16px therefore (10/16) = 62.5%*/
+  /*    This means that 1 rem == 10px */
+}
+
+body {
+  box-sizing: border-box;
+}
