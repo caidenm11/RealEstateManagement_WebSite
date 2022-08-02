@@ -9,7 +9,7 @@
 
     <?php
     $servername = "localhost";
-    $dbname = "CaidenDB";
+    $dbname = "RedGorillasDB";
     $username = "root";
     $password = "";
 
