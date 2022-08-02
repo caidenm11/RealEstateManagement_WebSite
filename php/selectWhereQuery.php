@@ -1,15 +1,14 @@
 <!doctype html>
-<!-- (C) Saeed Mirjalili -->
 <html>
 <head>
     <title>Display Records of a table</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style2.css" />
 </head>
 
 <body>
     <?php
     $servername = "localhost";
-    $dbname = "SaeedDB";
+    $dbname = "RedGorillasDB";
     $username = "root";
     $password = "";
 
@@ -22,7 +21,7 @@
     }
 
     try {
-        $sql = "SELECT StdID,SName,BirthDate,Gender,Department FROM Student WHERE Department = '$_POST[dept]'";
+        $sql = "SELECT * FROM Address WHERE City = '$_POST[City]'";
 
         $stmnt = $conn->prepare($sql);
 
@@ -31,9 +30,9 @@
         $row = $stmnt->fetch();
         if ($row) {
             echo '<table>';
-            echo '<tr> <th>StudentID</th> <th>Name</th> <th>Birth Date</th> <th>Gender</th> <th>Department</th> </tr>';
+            echo '<tr> <th>Address ID</th> <th>Street Name</th> <th>Building Number</th> <th>City</th> <th>Province</th> </tr>';
             do {
-                echo "<tr><td>$row[StdID]</td><td>$row[SName]</td><td>$row[BirthDate]</td><td>$row[Gender]</td><td>$row[Department]</td></tr>";
+                echo "<tr><td>$row[AddressID]</td><td>$row[StreetName]</td><td>$row[BuildingNumber]</td><td>$row[City]</td><td>$row[Province]</td></tr>";
             } while ($row = $stmnt->fetch());
             echo '</table>';
         } else {
